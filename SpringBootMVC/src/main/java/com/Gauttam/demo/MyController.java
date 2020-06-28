@@ -13,7 +13,7 @@ public class MyController
 	@RequestMapping("/home")
 	public String home()
 	{
-		return "index.jsp";
+		return "index";
 	}
 	
 	@RequestMapping("/add")
@@ -21,7 +21,7 @@ public class MyController
 	{
 		ModelAndView mv = new ModelAndView();
 		
-		mv.setViewName("result.jsp");
+		mv.setViewName("result");
 		
 		int num3 = i + j;
 		
