@@ -2,13 +2,13 @@ package com.Gauttam.demo.model;
 
 public class User 
 {
-	private int id;
+	private int uid;
 	private String uname;
-	public int getId() {
-		return id;
+	public int getUid() {
+		return uid;
 	}
-	public void setId(int id) {
-		this.id = id;
+	public void setUid(int uid) {
+		this.uid = uid;
 	}
 	public String getUname() {
 		return uname;
@@ -18,9 +18,8 @@ public class User
 	}
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", uname=" + uname + "]";
+		return "User [uid=" + uid + ", uname=" + uname + "]";
 	}
 	
 	
-
 }
