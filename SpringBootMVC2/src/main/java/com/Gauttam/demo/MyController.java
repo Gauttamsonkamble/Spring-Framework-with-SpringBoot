@@ -17,6 +17,12 @@ import com.Gauttam.demo.model.User;
 @Controller
 public class MyController
 {
+	@ModelAttribute
+	public void addmodel(Model m)
+	{
+		m.addAttribute("name", "Gauttam");
+	}
+	
 	@RequestMapping("/home")
 	public String home()
 	{
