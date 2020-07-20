@@ -10,7 +10,7 @@
 
    Welcome to Spring Boot
  	
- 	<form action="addUser">
+ 	<form action="addUser" method="post">
  		Enter User Id : <input type="text" name="uid"><br>
  		Enter User Name : <input type="text" name="uname"><br>
  		<input type="submit">
