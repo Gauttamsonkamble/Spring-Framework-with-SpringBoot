@@ -4,6 +4,15 @@ public class User
 {
 	private int uid;
 	private String uname;
+	
+	
+	
+	
+	public User(int uid, String uname) {
+		super();
+		this.uid = uid;
+		this.uname = uname;
+	}
 	public int getUid() {
 		return uid;
 	}
