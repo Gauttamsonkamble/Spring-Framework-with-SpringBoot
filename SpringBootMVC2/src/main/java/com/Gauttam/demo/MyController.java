@@ -1,8 +1,6 @@
 package com.Gauttam.demo;
 
-import java.util.Arrays;
-import java.util.List;
-
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,6 +8,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.Gauttam.demo.dao.UserRepo;
 import com.Gauttam.demo.model.User;
 
 
@@ -20,6 +19,9 @@ import com.Gauttam.demo.model.User;
 @Controller
 public class MyController
 {
+	@Autowired
+	UserRepo repo;
+	
 	@ModelAttribute
 	public void addmodel(Model m)
 	{
@@ -35,22 +37,17 @@ public class MyController
 
 	
 	@PostMapping(value="addUser")
-	public String addUser(User u)
+	public String addUser(User u,Model m)
 	{
-		
+		m.addAttribute(u);
 		return "result";
 	}
 	
 	@GetMapping("getUser")
 	public String getUser(Model m)
 	{
-		List<User> user = Arrays.asList(new User(101,"Gauttam"),new User(102,"Robert"));
-		
-		m.addAttribute("result", user);
+		m.addAttribute("result", repo.findAll());
 		
 		return "showUser";
 	}
-	
-	
-
 }

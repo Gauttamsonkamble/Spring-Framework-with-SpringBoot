@@ -1,10 +1,15 @@
 package com.Gauttam.demo.model;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+
+@Entity
 public class User 
 {
+   @Id
 	private int uid;
 	private String uname;
-	
 	
 	
 	
@@ -13,6 +18,16 @@ public class User
 		this.uid = uid;
 		this.uname = uname;
 	}
+	
+	
+	
+	public User() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+
+
 	public int getUid() {
 		return uid;
 	}
