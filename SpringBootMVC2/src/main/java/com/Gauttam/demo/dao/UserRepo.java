@@ -6,4 +6,6 @@ import com.Gauttam.demo.model.User;
 
 public interface UserRepo extends JpaRepository<User, Integer> {
 
+	
+
 }

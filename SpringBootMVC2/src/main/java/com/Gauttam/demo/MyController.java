@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.Gauttam.demo.dao.UserRepo;
 import com.Gauttam.demo.model.User;
@@ -40,14 +41,25 @@ public class MyController
 	public String addUser(User u,Model m)
 	{
 		m.addAttribute(u);
+		
 		return "result";
 	}
 	
-	@GetMapping("getUser")
-	public String getUser(Model m)
+
+	@GetMapping("getUsers")
+	public String getUsers(Model m)
 	{
-		m.addAttribute("result", repo.findAll());
+	   m.addAttribute("result", repo.findAll());
+			
+		return "showUser";
+	}
+	
+	@GetMapping("getUser")
+	public String getUser(@RequestParam int uid,Model m)
+	{
+		m.addAttribute("result", repo.getOne(uid));
 		
 		return "showUser";
 	}
+	
 }

@@ -15,5 +15,12 @@
  		Enter User Name : <input type="text" name="uname"><br>
  		<input type="submit">
  	</form>
+ 	
+ 	<hr>
+ 	
+ 	<form action="getUser" method="get">
+ 		Enter User Id : <input type="text" name="uid"><br>
+ 		<input type="submit">
+ 	</form>
 </body>
 </html>
