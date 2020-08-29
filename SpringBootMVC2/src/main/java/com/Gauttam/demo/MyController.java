@@ -62,4 +62,12 @@ public class MyController
 		return "showUser";
 	}
 	
+	@PostMapping("addUsers")
+	public String addUsers(@ModelAttribute User u)
+	{
+		repo.save(u);
+		
+		return "result";
+	}
+	
 }
