@@ -70,4 +70,12 @@ public class MyController
 		return "result";
 	}
 	
+	@GetMapping("getUserByUname")
+	public String getUserByUname(@RequestParam String uname,Model m)
+	{
+		m.addAttribute("result", repo.getUserByUname(uname));
+		
+		return "showUser";
+	}
+	
 }

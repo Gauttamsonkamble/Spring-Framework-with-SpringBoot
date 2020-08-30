@@ -22,5 +22,14 @@
  		Enter User Id : <input type="text" name="uid"><br>
  		<input type="submit">
  	</form>
+ 	
+ 	
+ 	<hr>
+ 	
+ 	<form action="getUserByUname" method="get">
+ 		Enter User Name : <input type="text" name="uname"><br>
+ 		<input type="submit">
+ 	</form>
+ 	
 </body>
 </html>
