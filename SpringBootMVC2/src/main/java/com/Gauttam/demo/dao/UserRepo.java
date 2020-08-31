@@ -12,6 +12,14 @@ public interface UserRepo extends JpaRepository<User, Integer> {
 
 	List<User> getUserByUname(String uname);
 
+	List<User> findByUnameOrderByUidAsc(String uname);
+
+	
+
+
+
+	
+
 
 	
 

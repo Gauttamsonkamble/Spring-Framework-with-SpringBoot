@@ -58,7 +58,7 @@ public class MyController
 	public String getUser(@RequestParam int uid,Model m)
 	{
 		m.addAttribute("result", repo.getOne(uid));
-		
+			
 		return "showUser";
 	}
 	
@@ -73,9 +73,13 @@ public class MyController
 	@GetMapping("getUserByUname")
 	public String getUserByUname(@RequestParam String uname,Model m)
 	{
-		m.addAttribute("result", repo.getUserByUname(uname));
+//		m.addAttribute("result", repo.getUserByUname(uname));
+		
+		m.addAttribute("result", repo.findByUnameOrderByUidAsc(uname));
 		
 		return "showUser";
 	}
+	
+	
 	
 }
