@@ -69,16 +69,26 @@ public class MyController
 		
 		return "result";
 	}
+//	
+//	@GetMapping("getUserByUname")
+//	public String getUserByUname(@RequestParam String uname,Model m)
+//	{
+//		m.addAttribute("result", repo.getUserByUname(uname));
+//		
+//		m.addAttribute("result", repo.findByUnameOrderByUidAsc(uname));
+//		
+//		return "showUser";
+//	}
+	
 	
 	@GetMapping("getUserByUname")
 	public String getUserByUname(@RequestParam String uname,Model m)
 	{
-//		m.addAttribute("result", repo.getUserByUname(uname));
-		
-		m.addAttribute("result", repo.findByUnameOrderByUidAsc(uname));
+		m.addAttribute("result", repo.find(uname));
 		
 		return "showUser";
 	}
+	
 	
 	
 	
