@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.Gauttam.demo.dao.UserRepo;
@@ -15,11 +16,20 @@ public class UserController
 	@Autowired
 	UserRepo repo;
 	
-	@GetMapping("User")
-	public List<User> getUser()
+	@GetMapping("Users")
+	public List<User> getUsers()
 	{
 		List<User> user = repo.findAll();
 		
 		return user;
 	}
+	
+	@GetMapping("User/{uid}")
+	public User user(@PathVariable("uid") int uid) 
+	{
+		User user = repo.findById(uid).orElse(new User(0,""));
+		
+		return user;
+	}
+	
 }
