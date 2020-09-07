@@ -1,5 +1,6 @@
 package com.Gauttam.demo;
 
+import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.slf4j.Logger;
@@ -17,9 +18,18 @@ public class LoggingAspect
 	
 	
 	@Before("execution(public * com.Gauttam.demo.UserController.getUsers())")
-	public void log()
+	public void logBefore()
 	{
-	    log.info("getUsers Method called from aspect");
+	    log.info("getUsers Method called Before ");
 		
 	}
+	
+	
+	@After("execution(public * com.Gauttam.demo.UserController.getUsers())")
+	public void logafter()
+	{
+	    log.info("getUsers Method called After ");
+		
+	}
+	
 }

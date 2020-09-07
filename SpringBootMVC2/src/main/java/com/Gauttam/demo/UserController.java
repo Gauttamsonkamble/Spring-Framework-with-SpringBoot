@@ -21,7 +21,8 @@ public class UserController
 	public List<User> getUsers()
 	{
 		List<User> user = repo.findAll();
-		
+			
+		System.out.println("getuser method called");
 		return user;
 	}
 	

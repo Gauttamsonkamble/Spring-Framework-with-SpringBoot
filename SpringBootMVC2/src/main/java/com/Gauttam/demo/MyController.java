@@ -50,6 +50,8 @@ public class MyController
 	public String getUsers(Model m)
 	{
 	   m.addAttribute("result", repo.findAll());
+	   
+	   
 			
 		return "showUser";
 	}
