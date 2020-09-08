@@ -1,6 +1,8 @@
 package com.Gauttam.demo;
 
 import org.aspectj.lang.annotation.After;
+import org.aspectj.lang.annotation.AfterReturning;
+import org.aspectj.lang.annotation.AfterThrowing;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.slf4j.Logger;
@@ -25,10 +27,17 @@ public class LoggingAspect
 	}
 	
 	
-	@After("execution(public * com.Gauttam.demo.UserController.getUsers())")
+	@AfterReturning("execution(public * com.Gauttam.demo.UserController.getUsers())")
 	public void logafter()
 	{
 	    log.info("getUsers Method called After ");
+		
+	}
+	
+	@AfterThrowing("execution(public * com.Gauttam.demo.UserController.getUsers())")
+	public void logexception()
+	{
+	    log.info("Issues ");
 		
 	}
 	
